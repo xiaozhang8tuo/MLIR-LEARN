@@ -1,0 +1,6 @@
+set(LLVM_TARGET_DEFINITIONS MiniInferOps.td)
+mlir_tablegen(MiniInferDialect.h.inc -gen-dialect-decls -dialect=mini_infer)
+mlir_tablegen(MiniInferDialect.cpp.inc -gen-dialect-defs -dialect=mini_infer)
+mlir_tablegen(MiniInferOps.h.inc -gen-op-decls)
+mlir_tablegen(MiniInferOps.cpp.inc -gen-op-defs)
+add_public_tablegen_target(MiniInferOpsIncGen16)
