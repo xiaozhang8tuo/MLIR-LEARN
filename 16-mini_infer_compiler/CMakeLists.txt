@@ -14,11 +14,33 @@ target_link_libraries(CH-${ch_num}
   MLIRMiniInfer16
   MLIRFuncDialect
   MLIRArithDialect
+  MLIRArithTransforms
   MLIRLinalgDialect
   MLIRTensorDialect
+  MLIRTensorTransforms
+  MLIRMemRefDialect
+  MLIRSCFDialect
+  MLIRControlFlowDialect
+  MLIRBufferizationDialect
+  MLIRBufferizationTransforms
+  MLIRLinalgTransforms
+  MLIRMemRefTransforms
   MLIRPass
   MLIRTransforms
   MLIRParser
+  # Conversion passes
+  MLIRArithToLLVM
+  MLIRControlFlowToLLVM
+  MLIRFuncToLLVM
+  MLIRIndexToLLVM
+  MLIRMemRefToLLVM
+  MLIRSCFToControlFlow
+  MLIRAffineToStandard
+  MLIRReconcileUnrealizedCasts
+  # ExecutionEngine (JIT)
+  MLIRExecutionEngine
+  MLIRToLLVMIRTranslationRegistration
+  MLIRTargetLLVMIRExport
 )
 
 # lit测试用的opt工具
